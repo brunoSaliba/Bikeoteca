@@ -1,7 +1,7 @@
 # Bikeoteca
 ___
 Este é um projeto simples para aprender <a href="https://flask.palletsprojects.com/en/2.1.x/">Flask</a> e <a href="https://www.mysql.com/">MySQL</a> com Python.
-
+___
 ### Como rodar o projeto
 ___
 - Tenha certeza que vc tem o <a href="https://www.python.org/downloads/">Python</a> e <a href="https://dev.mysql.com/downloads/installer/">MySQL</a> instalado.
