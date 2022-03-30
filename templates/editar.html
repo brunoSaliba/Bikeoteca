@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% block conteudo %}
+      <form action="{{ url_for('atualizar') }}" method="post" enctype="multipart/form-data">
+        <figure class="thumb col-md-4">
+            <img class="img-responsive" src="{{ url_for('imagem', nome_arquivo=capa_bike) }}">
+            <figcaption>
+                <label class="fileContainer">
+                    Mudar capa
+                    <input type="file" name="arquivo" accept=".jpg">
+                </label>
+            </figcaption>
+        </figure>
+        <input type="hidden" name="id" value="{{ bike.id }}">
+        <fieldset>
+          <div class="form-group">
+            <label for="modelo">Modelo</label>
+            <input type="text" id="modelo" name="modelo" class="form-control" value="{{ bike.modelo }}">
+          </div>
+          <div class="form-group">
+            <label for="marca">Marca</label>
+            <input type="text" id="marca" name="marca" class="form-control" value="{{ bike.marca }}">
+          </div>
+          <div class="form-group">
+            <label for="modalidade">Modalidade</label>
+            <input type="text" id="modalidade" name="modalidade" class="form-control" value="{{ bike.modalidade }}">
+          </div>
+          <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+          <a class="btn btn-danger" href="{{ url_for('index') }}">Voltar</a>
+        </fieldset>
+      </form>
+{% endblock %}

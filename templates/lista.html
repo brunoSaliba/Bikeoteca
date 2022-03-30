@@ -1,0 +1,28 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <a class="btn btn-primary" href="{{ url_for('novo') }}">Nova Bike</a>
+
+        <table class="table table-striped table-responsive table-bordered">
+            <thead class="thead-default">
+                <tr>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Console</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for bike in bikes %}
+                <tr>
+                    <td>{{ bike.modelo }}</td>
+                    <td>{{ bike.marca }}</td>
+                    <td>{{ bike.modalidade }}</td>
+                    <td>
+                        <a href="{{ url_for('editar', id=bike.id) }}">Editar</a>
+                        <a href="{{ url_for('deletar', id=bike.id) }}">Deletar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
